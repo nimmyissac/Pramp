@@ -1,4 +1,4 @@
-// uses insertion sort
+/*------------------------------------------------Using Insertion sort----------------------------------------------------------------------------*/
 function sortKMessedArray1(arr, k) {
   
     if(arr.length == 1 || arr.length == 0){
@@ -21,6 +21,8 @@ function sortKMessedArray1(arr, k) {
    
    return arr;
  }
+
+/*------------------------------------------------Using MinHeap----------------------------------------------------------------------------*/
 
  let swap = function(arr, a, b){
     let temp = arr[a];
@@ -56,12 +58,15 @@ function sortKMessedArray1(arr, k) {
  }
 
  
-// use min heap
  function sortKMessedArray(arr, k) {
     
     if(arr.length == 1 || arr.length == 0){
       return arr;
     }
+   // Can eliminate this extra space by manipulating the arr in the end. The array would be something like this in
+   // the end for the input sortKMessedArray([1, 4, 5, 2, 3, 7, 8, 6, 10, 9], 2))
+   //  [10, 9, 8, 1, 2, 3, 4, 5, 6, 7]
+   
     let result = [];
     buildMinHeap(arr, k+1);
     for(let index = k+1; index < arr.length; index++){
